@@ -110,4 +110,3 @@ Voir `configs/` :
 -   `R3_config.txt` – Config complète R3 (Barcelone)
 
 ```
-----------
