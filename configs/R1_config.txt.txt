@@ -1,0 +1,30 @@
+## configuration du routeur R1 PARIS 
+
+! --- Activer le package de sécurité
+license boot module c1900 technology-package securityk9
+reload
+
+! --- ACL
+access-list 110 permit ip 192.168.1.0 0.0.0.255 192.168.3.0 0.0.0.255
+
+! --- ISAKMP Phase 1
+crypto isakmp policy 10
+ encryption aes 256
+ authentication pre-share
+ group 5
+ hash sha
+ lifetime 86400
+exit
+crypto isakmp key vpnpa55 address 10.2.2.2
+
+! --- IPsec Phase 2
+crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
+crypto map VPN-MAP 10 ipsec-isakmp
+ description VPN connection to R3
+ set peer 10.2.2.2
+ set transform-set VPN-SET
+ match address 110
+
+! --- Appliquer à l'interface WAN
+interface s0/0/0
+ crypto map VPN-MAP

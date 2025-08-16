@@ -1,0 +1,37 @@
+## configuration du routeur R3 Barcelone
+
+
+! Activer package sécurité
+license boot module c1900 technology-package securityk9
+reload
+
+! ACL – trafic intéressant vers Paris
+access-list 110 permit ip 192.168.3.0 0.0.0.255 192.168.1.0 0.0.0.255
+
+! ISAKMP Phase 1
+crypto isakmp policy 10
+ encryption aes 256
+ authentication pre-share
+ group 5
+ hash sha
+ lifetime 86400
+exit
+crypto isakmp key vpnpa55 address 10.1.1.2
+
+! IPsec Phase 2
+crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
+crypto map VPN-MAP 10 ipsec-isakmp
+ description VPN connection to R1
+ set peer 10.1.1.2
+ set transform-set VPN-SET
+ match address 110
+
+! Interfaces
+interface g0/0
+ ip address 192.168.3.1 255.255.255.0
+ no shutdown
+
+interface s0/0/1
+ ip address 10.2.2.2 255.255.255.252
+ no shutdown
+ crypto map VPN-MAP

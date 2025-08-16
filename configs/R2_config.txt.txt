@@ -1,0 +1,18 @@
+#### configuration R2 Berlin, ce routeur ne chiffre pas le trafic, il assure juste le routage
+
+! Interfaces
+interface s0/0/0
+ ip address 10.1.1.1 255.255.255.252
+ no shutdown
+
+interface s0/0/1
+ ip address 10.2.2.1 255.255.255.252
+ no shutdown
+
+interface g0/0
+ ip address 192.168.2.1 255.255.255.0
+ no shutdown
+
+! Routage statique
+ip route 192.168.1.0 255.255.255.0 10.1.1.2
+ip route 192.168.3.0 255.255.255.0 10.2.2.2
