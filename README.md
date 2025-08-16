@@ -1,6 +1,4 @@
-# vpn-ipsec-site-a-site
-
-## Site-to-Site IPsec VPN – Paris ↔ Berlin ↔ Barcelone
+# Site-to-Site IPsec VPN – Paris ↔ Berlin ↔ Barcelone
 
 ### Contexte
 Une entreprise internationale reliant trois villes :
