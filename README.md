@@ -99,6 +99,12 @@ interface s0/0/x
 -   **Avant trafic intéressant** : `show crypto ipsec sa`  compteurs à 0
 -   **Ping PC-C depuis PC-A**
 -   **Après trafic intéressant** : `show crypto ipsec sa`  compteurs augmentent
+![tunnel](show-tunnel.png)
+
+- pkts encaps: 11, #pkts encrypt: 11 → 11 paquets sortants chiffrés
+- pkts decaps: 2, #pkts decrypt: 2 → 2 paquets entrants déchiffrés
+Status : ACTIVE → le tunnel est actif et transporte du trafic
+
 ----------
 
 ##  Configs des trois routeurs
