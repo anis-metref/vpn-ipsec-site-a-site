@@ -108,5 +108,4 @@ Voir `configs/` :
 -   `R1_config.txt` – Config complète R1 (Paris)
 -   `R2_config.txt` – Config de transit R2 (Berlin)
 -   `R3_config.txt` – Config complète R3 (Barcelone)
-
 ```
