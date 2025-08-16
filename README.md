@@ -1,18 +1,5 @@
 # vpn-ipsec-site-a-site
 
-##  Structure du projet
-
-```
-site-to-site-vpn/
-├── README.md
-├── schema.png
-└── configs/
-    ├── R1_config.txt
-    ├── R2_config.txt
-    └── R3_config.txt
-
-```
-
 ## Site-to-Site IPsec VPN – Paris ↔ Berlin ↔ Barcelone
 
 ### Contexte
