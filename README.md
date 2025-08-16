@@ -96,9 +96,9 @@ interface s0/0/x
 
 ##  Vérification
 
--   **Avant trafic intéressant** : `show crypto ipsec sa` ➡ compteurs à 0
+-   **Avant trafic intéressant** : `show crypto ipsec sa`  compteurs à 0
 -   **Ping PC-C depuis PC-A**
--   **Après trafic intéressant** : `show crypto ipsec sa` ➡ compteurs augmentent
+-   **Après trafic intéressant** : `show crypto ipsec sa`  compteurs augmentent
 ----------
 
 ##  Configs des trois routeurs
