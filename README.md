@@ -104,7 +104,7 @@ interface s0/0/x
 
 - pkts encaps: 11, #pkts encrypt: 11 → 11 paquets sortants chiffrés
 - pkts decaps: 2, #pkts decrypt: 2 → 2 paquets entrants déchiffrés
-Status : ACTIVE → le tunnel est actif et transporte du trafic
+- le tunnel est actif et transporte du trafic
 
 ----------
 
