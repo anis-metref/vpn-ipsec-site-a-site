@@ -41,7 +41,7 @@ Objectif : établir un **tunnel IPsec** entre Paris (R1) et Barcelone (R3) via B
 
 ##  Étapes de configuration (R1 & R3)
 
-### Activer la licence sur  (R1) et  (R3)
+### Activer la licence sur  R1 et R3
 ```bash
 license boot module c1900 technology-package securityk9
 reload
