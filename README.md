@@ -101,7 +101,7 @@ interface s0/0/x
 -   **Après trafic intéressant** : `show crypto ipsec sa` ➡ compteurs augmentent
 ----------
 
-##  Configs séparées
+##  Configs des trois routeurs
 
 Voir `configs/` :
 
@@ -110,37 +110,4 @@ Voir `configs/` :
 -   `R3_config.txt` – Config complète R3 (Barcelone)
 
 ```
-
-## **configs/R1_config.txt**
-```bash
-! Activer package sécurité
-license boot module c1900 technology-package securityk9
-reload
-
-! ACL
-access-list 110 permit ip 192.168.1.0 0.0.0.255 192.168.3.0 0.0.0.255
-
-! ISAKMP Phase 1
-crypto isakmp policy 10
- encryption aes 256
- authentication pre-share
- group 5
- hash sha
- lifetime 86400
-exit
-crypto isakmp key vpnpa55 address 10.2.2.2
-
-! IPsec Phase 2
-crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
-crypto map VPN-MAP 10 ipsec-isakmp
- description VPN connection to R3
- set peer 10.2.2.2
- set transform-set VPN-SET
- match address 110
-
-! Interface WAN
-interface s0/0/0
- crypto map VPN-MAP
-```
-
 ----------
