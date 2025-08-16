@@ -1,9 +1,5 @@
 # vpn-ipsec-site-a-site
 
-
-
-----------
-
 ##  Structure du projet
 
 ```
@@ -16,10 +12,6 @@ site-to-site-vpn/
     └── R3_config.txt
 
 ```
-
-----------
-
-
 
 ## Site-to-Site IPsec VPN – Paris ↔ Berlin ↔ Barcelone
 
@@ -36,7 +28,7 @@ Objectif : établir un **tunnel IPsec** entre Paris (R1) et Barcelone (R3) via B
 ##  Prérequis
 - Cisco Packet Tracer 
 - **Routeurs Cisco** (ex. ISR 1900, 2900, 4300) compatibles IPsec
-- **Licence Securityk9** activée (`license boot module c1900 technology-package securityk9`)
+- **Licence Securityk9** activée
 - IOS avec support **ISAKMP/IKEv1**, **AES 256**, **SHA-1**, **DH Group 5**
 - Câblage et IP plan conformes à la topologie
 - Clients PC dans chaque LAN
